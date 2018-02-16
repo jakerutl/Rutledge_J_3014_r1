@@ -84,13 +84,14 @@ label{
 .TimeStamp{
   margin: 0;
   padding-left: 30px;
-  /* float: right;
-  margin-left: 60px;
-  margin-top: 60px; */
+  font-size: 12px;
+  /* margin-left: 60px;
+  margin-top: 60px; */ 
 }
 
 .timeMsg{
   margin: 0;
+  /* font-size: 12px; */
   padding-top: 60px;
   padding-left: 30px;
 
