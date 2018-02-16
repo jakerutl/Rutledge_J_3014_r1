@@ -38,7 +38,7 @@
 				return "Locked Out! Now you have no way back in!!!! ";
 			}
 		}else{
-			$message = "You spelt the user name wrong...";
+			$message = "You spelled the user name wrong...";
 			return $message;
 		}
 
