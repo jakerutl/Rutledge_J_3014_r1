@@ -11,3 +11,5 @@ nicholasireland.ca - helped with the login system
 Looked at mostly dates and how to use them
 
 New table is in db folder
+
+Based the look off Facebook
