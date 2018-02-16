@@ -1,0 +1,5 @@
+Tutorials https://stackoverflow.com/questions/2182511/setting-a-greeting-based-on-users-time-good-morning-good-afternoon
+
+http://us2.php.net/manual/en/function.date.phphttp://fuel-efficient-vehicles.org/pwsdb/?p=62
+
+Looked at mostly dates and how to use them
