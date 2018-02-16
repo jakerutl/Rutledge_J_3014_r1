@@ -49,13 +49,9 @@ if(isset($_GET['logout']))
 
 	<?php echo $_SESSION['user_name'];  ?>
 	</h1>
+<br>
+	<h4 class="TimeStamp">Last successful login: <?php echo $_SESSION['user_last']; ?></h4>
 
-<div class="">
-	<h2 class="TimeStamp">Last successful login: <?php
-echo $date;
-?></h2>
-
- </div>
 
 </div>
 </div>

@@ -4,25 +4,38 @@
 		require_once('connect.php');
 		$username = mysqli_real_escape_string($link, $username);
 		$password = mysqli_real_escape_string($link, $password);
-		$loginstring = "SELECT * FROM tbl_user WHERE user_name='{$username}' AND user_pass='{$password}'";
+		$loginstring = "SELECT * FROM tbl_user WHERE user_name='{$username}'";
 		$user_set = mysqli_query($link, $loginstring);
 		//echo mysqli_num_rows($user_set);
 		if(mysqli_num_rows($user_set)){
 			$founduser = mysqli_fetch_array($user_set, MYSQLI_ASSOC);
 			$id = $founduser['user_id'];
-			$_SESSION['user_id'] = $id;
-			$_SESSION['user_name']= $founduser['user_fname'];
-			$date = date('Y-m-d H:i:s');
+			if($user_pass === $founduser["user_pass"]&&($founduser['user_fail'] < 3)){
+				$_SESSION['user_id'] = $id;
+				$_SESSION['user_name']= $founduser['user_fname'];
+				$_SESSION['user_last']= $founduser['user_last'];
+				date_default_timezone_set('America/Toronto');
+				$date = date('Y-m-d H:i:s');
 
-			if(mysqli_query($link, $loginstring)){
-				$update = "UPDATE tbl_user SET user_ip='{$ip}' WHERE user_id={$id}";
-				$updatequery = mysqli_query($link, $update);
-        // $query1 = "UPDATE `tbl_user` SET `user_last`='{$date}' WHERE user_id = {$id}";
-        $query1 = "UPDATE `tbl_user` SET `user_last`='{$date}' WHERE user_id={$id}";
-				$query_run1 = mysqli_query($con, $query1);
-				 // echo $query1;
+				if(mysqli_query($link, $loginstring)){
+					$update = "UPDATE tbl_user SET user_ip='{$ip}' WHERE user_id={$id}";
+					$updatequery = mysqli_query($link, $update);
+					$query1 = "UPDATE `tbl_user` SET `user_last`='{$date}' WHERE user_id={$id}";
+					$query_run1 = mysqli_query($link, $query1);
+					$failquery = "UPDATE `tbl_user` SET `user_fail`= 0 WHERE 'user_id'={$id}";
+					$fail_run = mysqli_query($link, $failquery);
+					 // echo $query1;
+				 }
+				redirect_to("admin_index.php");
+			}else if($founduser['user_fail'] < 3){
+				$num = $founduser['user_fail'] + 1;
+				$failquery = "UPDATE `tbl_user` SET `user_fail`= {$num} WHERE 'user_id'={$id}";
+				$fail_run = mysqli_query($link, $failquery);
+				echo "Wrong password!";
+			}else{
+				//lock out
+				echo "Locked Out!";
 			}
-			redirect_to("admin_index.php");
 		}else{
 			$message = "You spelt something wrong...";
 			return $message;

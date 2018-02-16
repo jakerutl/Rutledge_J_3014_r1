@@ -79,24 +79,25 @@ label{
   color: #5d5d5d;
 }
 
-.timeMsg{
-  margin: 0;
-  float: left;
-  margin-left: 60px;
-  margin-top: 60px;
-}
 
 
 .TimeStamp{
   margin: 0;
-  float: left;
+  padding-left: 30px;
+  /* float: right;
   margin-left: 60px;
-  margin-top: 60px;
+  margin-top: 60px; */
+}
+
+.timeMsg{
+  margin: 0;
+  padding-top: 60px;
+  padding-left: 30px;
+
 }
 
 .lastLogin{
   margin: 0;
-  float: left;
-  margin-left: 60px;
-  margin-top: 60px;
+  padding-top: 60px;
+  padding-left: 30px;
 }
