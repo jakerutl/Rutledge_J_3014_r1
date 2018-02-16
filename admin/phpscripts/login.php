@@ -12,13 +12,19 @@
 			$id = $founduser['user_id'];
 			$_SESSION['user_id'] = $id;
 			$_SESSION['user_name']= $founduser['user_fname'];
+			$date = date('Y-m-d H:i:s');
+
 			if(mysqli_query($link, $loginstring)){
 				$update = "UPDATE tbl_user SET user_ip='{$ip}' WHERE user_id={$id}";
 				$updatequery = mysqli_query($link, $update);
+        // $query1 = "UPDATE `tbl_user` SET `user_last`='{$date}' WHERE user_id = {$id}";
+        $query1 = "UPDATE `tbl_user` SET `user_last`='{$date}' WHERE user_id={$id}";
+				$query_run1 = mysqli_query($con, $query1);
+				 // echo $query1;
 			}
 			redirect_to("admin_index.php");
 		}else{
-			$message = "Learn how to type you dumba&*.";
+			$message = "You spelt something wrong...";
 			return $message;
 		}
 
