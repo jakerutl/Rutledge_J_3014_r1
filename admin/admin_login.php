@@ -26,20 +26,21 @@
 <body>
 
 	<header class="topBar" >
-		<?php if(!empty($message)){ echo $message;} ?>
 		<form action="admin_login.php" method="post">
+			<h2 class="error"><?php if(!empty($message)){ echo $message;} ?></h2>
 			<label>Username:</label>
 			<input type="text" name="username" value="">
-			<!-- <br> -->
 			<label>Password</label>
 			<input type="password" name="password" value="">
-			<!-- <br><br> -->
-			<input type="submit" name="submit" value="Sign In">
+			<!-- <input class="btn" type="submit" name="submit" value="Sign In"> -->
+			<button class="btn" type="submit" name="submit">Sign In</button>
 		</form>
 	</header>
 
 	<div class="mainBody">
-		hellooo.
+		<div class="middle">
+		<h1 class="lastLogin"> Login Now!</h1>
+	</div>
 	</div>
 
 

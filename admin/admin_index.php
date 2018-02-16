@@ -31,6 +31,8 @@ if(isset($_GET['logout']))
 </header>
 
 <div class="mainBody">
+	<div class="middle">
+
 	<h1 class="timeMsg">
 		<?php
 			date_default_timezone_set('America/Toronto');
@@ -47,6 +49,15 @@ if(isset($_GET['logout']))
 
 	<?php echo $_SESSION['user_name'];  ?>
 	</h1>
+
+<div class="">
+	<h2 class="TimeStamp">Last successful login: <?php
+echo $date;
+?></h2>
+
+ </div>
+
+</div>
 </div>
 
 </body>
