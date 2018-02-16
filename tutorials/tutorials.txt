@@ -4,6 +4,8 @@ http://us2.php.net/manual/en/function.date.phphttp://fuel-efficient-vehicles.o
 
 -https://stackoverflow.com/questions/32847841/i-need-a-timer-that-disable-submit-button (didn’t end up using this)
 
+https://stackoverflow.com/questions/42040356/i-need-to-insert-date-into-database-when-user-clicks-on-login-button-through-php 
+
 nicholasireland.ca - helped with the login system
 
 Looked at mostly dates and how to use them
