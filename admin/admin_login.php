@@ -19,7 +19,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
-<title>Welcome to your admin panel login</title>
+<title>Welcome to the best admin login ever!</title>
 <link rel="stylesheet" href="css/main.css">
 </head>
 

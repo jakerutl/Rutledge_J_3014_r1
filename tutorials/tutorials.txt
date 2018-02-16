@@ -2,4 +2,10 @@ Tutorials https://stackoverflow.com/questions/2182511/setting-a-greeting-based
 
 http://us2.php.net/manual/en/function.date.phphttp://fuel-efficient-vehicles.org/pwsdb/?p=62
 
+-https://stackoverflow.com/questions/32847841/i-need-a-timer-that-disable-submit-button (didn’t end up using this)
+
+nicholasireland.ca - helped with the login system
+
 Looked at mostly dates and how to use them
+
+New table is in db folder

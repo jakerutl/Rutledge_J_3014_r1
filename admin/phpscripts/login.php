@@ -10,7 +10,7 @@
 		if(mysqli_num_rows($user_set)){
 			$founduser = mysqli_fetch_array($user_set, MYSQLI_ASSOC);
 			$id = $founduser['user_id'];
-			if($user_pass === $founduser["user_pass"]&&($founduser['user_fail'] < 3)){
+			if($password == $founduser["user_pass"] &&($founduser['user_fail'] < 3)){
 				$_SESSION['user_id'] = $id;
 				$_SESSION['user_name']= $founduser['user_fname'];
 				$_SESSION['user_last']= $founduser['user_last'];
@@ -24,20 +24,21 @@
 					$query_run1 = mysqli_query($link, $query1);
 					$failquery = "UPDATE `tbl_user` SET `user_fail`= 0 WHERE 'user_id'={$id}";
 					$fail_run = mysqli_query($link, $failquery);
-					 // echo $query1;
+
+
 				 }
 				redirect_to("admin_index.php");
 			}else if($founduser['user_fail'] < 3){
 				$num = $founduser['user_fail'] + 1;
 				$failquery = "UPDATE `tbl_user` SET `user_fail`= {$num} WHERE 'user_id'={$id}";
 				$fail_run = mysqli_query($link, $failquery);
-				echo "Wrong password!";
+				return "Wrong password...";
 			}else{
 				//lock out
-				echo "Locked Out!";
+				return "Locked Out! Now you have no way back in!!!! ";
 			}
 		}else{
-			$message = "You spelt something wrong...";
+			$message = "You spelt the user name wrong...";
 			return $message;
 		}
 

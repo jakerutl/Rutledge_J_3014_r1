@@ -39,11 +39,11 @@ if(isset($_GET['logout']))
 			$Hour = date('G');
 
 			if ( $Hour >= 5 && $Hour <= 11 ) {
-	    echo "Good Morning";
+	    echo "Good morning sunshine. Just a reminder to go to the gym tonight!";
 		} else if ( $Hour >= 12 && $Hour <= 18 ) {
-	    echo "Good Afternoon";
+	    echo "Good Afternoon, I hope you have gone to the gym already";
 		} else if ( $Hour >= 19 || $Hour <= 4 ) {
-	    echo "Good Night";
+	    echo "Good Night(even though you'll be staying up all night trying to do homework)";
 	}
 	?>
 
